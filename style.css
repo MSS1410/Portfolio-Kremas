@@ -1,0 +1,161 @@
+@import './components/menu/menu.css';
+@import './components/projects/project.css';
+@import './components/contact/contact.css';
+@import './components/info/info.css';
+
+:root {
+  --font-primary: 'EB Garamond', serif;
+  --font-secondary: 'Bebas Neue', sans-serif;
+  --font-terciary: 'Limelight', sans-serif;
+  --font-cuartiary: 'Shadows Into Light', cursive;
+}
+
+/* Estilo general */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  color: rgb(178, 170, 170);
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  height: 100vh;
+  position: relative;
+  margin-top: 2%;
+  margin-left: 5%;
+  z-index: 1;
+}
+.select {
+  text-decoration: double;
+  color: rgb(154, 52, 52);
+}
+.fondopantalla {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/fpor.jpg') !important;
+  background-size: 150% 150%;
+  background-position: 0 0;
+  animation: satEfect 20s linear infinite, desenfoque 30s linear infinite,
+    wave 20s linear infinite, zoom 50s linear infinite,
+    leftRight 30s linear infinite;
+  filter: blur(0px) saturate(100%);
+  z-index: -1;
+}
+.descri {
+  font-family: var(--font-secondary);
+  font-size: 25px;
+  text-decoration: line-through;
+  text-transform: lowercase;
+  margin: 5px 0; /* reduzco  el espaciado en zona vertical */
+  border: 0.00001px solid wheat;
+  padding: 10px;
+  margin-left: 10px;
+}
+/* animacion de movimiento del fondo */
+@keyframes wave {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes zoom {
+  0% {
+    background-size: 150%;
+  }
+  100% {
+    background-size: 160%;
+  }
+}
+
+@keyframes leftRight {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 20% 0%;
+  }
+}
+
+@keyframes desenfoque {
+  0% {
+    filter: blur(0px) saturate(100%);
+  }
+  100% {
+    filter: blur(1px) saturate(200%);
+  }
+}
+
+.titulo {
+  font-family: var(--font-secondary);
+  font-size: 100px;
+  margin: 10px 0; /* quito espacio en el  vertical */
+}
+
+.frase {
+  font-family: var(--font-primary);
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-size: 1.2em;
+  max-width: 40%;
+  color: rgb(204, 176, 176);
+  text-align: center;
+}
+
+/* transicion cambio pagina */
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+/* --------------------------------------------------- */
+/*  RESPONSIVE 
+/* --------------------------------------------------- */
+@media (max-width: 768px) {
+  /*tablets */
+  #main {
+    margin-top: 5%;
+    margin-left: 3%;
+  }
+  .titulo {
+    font-size: 8rem; /*  pantalla mediana */
+  }
+  .descri {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /*   móviles */
+  #main {
+    margin-top: 3%;
+    margin-left: 2%;
+  }
+  .titulo {
+    font-size: 2.5rem; /*  móviles */
+  }
+  .descri {
+    font-size: 18px;
+  }
+  .frase {
+    font-size: 1rem;
+    right: 10px;
+    bottom: 10px;
+  }
+}

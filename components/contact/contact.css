@@ -1,0 +1,134 @@
+.contactContainer {
+  display: flex;
+}
+
+.contactList {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  right: 0;
+  align-items: center;
+  top: 30%;
+  padding: 2px;
+  width: 90%;
+  font-family: 'Courier New', monospace;
+  color: rgb(178, 170, 170);
+  gap: 20px;
+}
+
+.fondodepantalla4 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/fpor.jpg');
+  background-size: 150% 150%;
+  background-position: 0 0;
+  animation: satEfect 20s linear infinite, desenfoque 100s linear infinite,
+    wave 20s linear infinite, zoom 50s linear infinite,
+    leftRight 30s linear infinite;
+  filter: blur(5px) saturate(100%) opacity(55%);
+  z-index: -1;
+}
+
+.econt {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 20px;
+}
+.elogo {
+  width: 3%;
+  object-fit: contain;
+  font-weight: 900;
+}
+
+.email {
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 10px;
+}
+
+.icont {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  gap: 20px;
+}
+.ilogo {
+  width: 5%;
+  object-fit: contain;
+  font-weight: 900;
+}
+
+.inst {
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 10px;
+}
+
+.xcont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: row;
+  gap: 10px;
+}
+.xlogo {
+  font-weight: 900;
+  width: 9%;
+  object-fit: contain;
+}
+
+.x {
+  font-size: 18px;
+  letter-spacing: 10px;
+
+  font-weight: 900;
+}
+
+/* ---------------------------------------------- */
+/* RESPONSIVE       */
+/* ---------------------------------------------- */
+@media (max-width: 768px) {
+  /* Tablets */
+  .contactList {
+    width: 80%;
+    top: 40%;
+  }
+  .elogo,
+  .ilogo,
+  .xlogo {
+    width: 8%;
+  }
+  .email,
+  .inst,
+  .x {
+    font-size: 26px;
+    letter-spacing: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Móviles */
+  .contactList {
+    width: 90%;
+    top: 35%;
+    gap: 20px;
+  }
+  .elogo,
+  .ilogo,
+  .xlogo {
+    width: 5%;
+  }
+  .email,
+  .inst,
+  .x {
+    font-size: 14px;
+    letter-spacing: 3px;
+  }
+}
